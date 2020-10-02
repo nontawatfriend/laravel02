@@ -1,6 +1,5 @@
 @extends('layouts.master') <!-- นำไฟล์เข้า -->
 @section('title', 'About') <!-- กำหนดหัวเว็บชื่อ Homepage -->
-
 @section('about','active') <!-- แถบเมนูเลื่อนตาม -->
 @section('content')
     <!-- ======= About Section ======= -->

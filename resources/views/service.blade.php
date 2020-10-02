@@ -1,6 +1,5 @@
 @extends('layouts.master') <!-- นำไฟล์เข้า -->
 @section('title', 'Service') <!-- กำหนดหัวเว็บชื่อ Homepage -->
-
 @section('service','active') <!-- แถบเมนูเลื่อนตาม -->
 @section('content')
 <!-- ======= Counter Section ======= -->

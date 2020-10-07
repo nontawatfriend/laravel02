@@ -26,3 +26,14 @@ Route::get('blog', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+//Lab 4
+Route::get('showall','App\Http\Controllers\MydbController@showalldata');
+
+Route::get('new', function () {
+    return view('new');
+});
+
+Route::post('insert','App\Http\Controllers\MydbController@insert');
+Route::get('edit/{id}','App\Http\Controllers\MydbController@edit');
+Route::post('edits/{id}','App\Http\Controllers\MydbController@edits');
+Route::get('delete/{id}','App\Http\Controllers\MydbController@delete');

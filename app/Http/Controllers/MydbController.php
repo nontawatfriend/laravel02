@@ -10,6 +10,7 @@ class MydbController extends Controller
         $strSQL = "select*from mytb1 ORDER BY ID ASC ";
         $_data = DB::select($strSQL);
         return view('showall',['_data'=>$_data]);
+    }
     public function insert(Request $request){
         $id=$request->input('id');
         $fname=$request->input('fname');
@@ -64,5 +65,4 @@ class MydbController extends Controller
     }
     public function delete($id) {
         DB::delete('delete from mytb1 where id = ?',[$id]);
-        return redirect()->action('App\Http\Controllers\MydbController@showalldata');
-ta');
+        return redirect()->action('App\Http\Controllers\MydbController@showalldata')');

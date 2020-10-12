@@ -23,6 +23,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -119,6 +120,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+    
 
 </body>
 

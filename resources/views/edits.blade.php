@@ -3,7 +3,7 @@
 @section('content')
 <div align="center">
     <hr>   
-    <h2>Edit data <i class="fa fa-plus-circle"></i></h2>
+    <h2>Edit Data <i class="fa fa-plus-circle"></i></h2>
     <hr>
     <form class="form-horizontal" method="post" action="{{url('/edits')}}/<?php echo $_data[0]->id; ?>">
         <input type="hidden" name="_token" value="{{csrf_token()}}">

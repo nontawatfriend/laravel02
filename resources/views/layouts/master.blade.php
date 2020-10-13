@@ -27,6 +27,11 @@
 </head>
 
 <body id="page-top">
+<<<<<<< HEAD
+=======
+{{-- tests --}}
+{{-- tests2.1 --}}
+>>>>>>> project2
   <!-- ======= Header/ Navbar ======= -->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
@@ -88,7 +93,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong>DevFolio</strong> <script>document.write(new Date().getFullYear());</script>. All Rights Reserved</p>
+            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
             <div class="credits">
               <!--
               All the links in the footer should remain intact.

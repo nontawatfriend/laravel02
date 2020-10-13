@@ -11,7 +11,6 @@ class MydbController extends Controller
         $strSQL = "select * from mytb1 ORDER BY ID ASC ";
         $_data = DB::select($strSQL);
 
-
         return view('showall',['_data'=>$_data]);
     }
     public function insert(Request $request){
@@ -63,24 +62,28 @@ class MydbController extends Controller
 
         /* $strSQL = "select id from mytb1 ";
         $strSQL = DB::select($strSQL); */
-        $chacklist = DB::table('mytb1')->where('id', $id_new)
-            ->get();
-        $Count = count($chacklist);
-        if($Count > 0){
-            echo    "<link href=\'fonts/Kamit.css' rel=\'stylesheet'>";
-            echo  "<div align=\"center\"><h1>มีผู้ใช้ ID นี้แล้วกรุณาทำรายการใหม่<br></h1></div>";
-            
+        if($id_new != $id){ // ถ้าidใหม่ ไม่เท่ากับ id ในฐานข้อมูลให้มาตรวจเช็คต่อด้านล่าง
 
-        //$_data = DB::select('select id from mytb1 where id ='.$id.'');
+            $chacklist = DB::table('mytb1')->where('id', $id_new)
+                ->get();
+            $Count = count($chacklist);
+            if($Count > 0){ //ถ้า id ใหม่ มี row มากกว่า1แถว ในฐานข้อมูลให้ทำการดักเอ่อเร่อไว้
+                echo  "<div align=\"center\"><h1>มีผู้ใช้ ID นี้แล้วกรุณาทำรายการใหม่<br></h1></div>";
 
-        //$data=array('first_name'=>$first_name,"last_name"=>$last_name,"city_name"=>$city_name,"email"=>$email);
-        //DB::table('student')->update($data);
-        // DB::table('student')->whereIn('id', $id)->update($request->all());
-        }
-        else {
+            //$_data = DB::select('select id from mytb1 where id ='.$id.'');
+            //$data=array('first_name'=>$first_name,"last_name"=>$last_name,"city_name"=>$city_name,"email"=>$email);
+            //DB::table('student')->update($data);
+            // DB::table('student')->whereIn('id', $id)->update($request->all());
+            }
+            else {
+                DB::update("update mytb1 set id='".$id_new."', fname='".$fname."', lname='".$lname."' where id='".$id."'");
+                return redirect()->action('App\Http\Controllers\MydbController@showalldata');
+            }
+        }else{ //ถ้าไอดีใหม่ เท่ากับ ไอดีในฐานข้อมูลให้บันทึกข้อมูล
             DB::update("update mytb1 set id='".$id_new."', fname='".$fname."', lname='".$lname."' where id='".$id."'");
-            return redirect()->action('App\Http\Controllers\MydbController@showalldata');
+                return redirect()->action('App\Http\Controllers\MydbController@showalldata');
         }
+        
             
     }
     public function delete($id) {

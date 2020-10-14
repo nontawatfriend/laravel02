@@ -56,6 +56,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll @yield('contact')" href="{{ url('contact') }}">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll @yield('showall')" href="{{ url('showall') }}">ShowAll 👦</a>
+          </li>
         </ul>
       </div>
     </div>

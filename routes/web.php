@@ -26,6 +26,9 @@ Route::get('blog', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+Route::get('showall', function () {
+    return view('showall');
+});
 //Lab 4
 Route::get('showall','App\Http\Controllers\MydbController@showalldata');
 

@@ -1,11 +1,19 @@
 @extends('layouts.master2') <!-- นำไฟล์เข้า -->
 @section('title', 'Tableall') <!-- กำหนดหัวเว็บชื่อ Homepage -->
+@section('about','active') <!-- แถบเมนูเลื่อนตาม -->
 @section('content')
 <!-- csrf-token -->
+<style>
+    a.D { color: #005CA2; 
+        text-decoration: none; /* underline  อันนี้คือมีขีดเส้นใต้*/
+        font-size: 1em;
+        line-height: 50px;
+    }
+</style>
 <meta name="csrf-token" content="{{ csrf_token() }}">
         <div align="center">
         <hr>   
-        <h2>Show All Data From mytb1  👦</h2>
+        <h2>Show All Data From mytb1  <a class="D" href="{{url('index')}}" title="index">👦</a></h2> {{-- style="text-decoration:none"ทำให้ไม่มีขีดเส้นใต้ลิ้ง--}}
         <hr>
             {{-- <table border="1"> --}}
                 <h4><a href="{{url('new')}}" class="btn btn-primary" >Insert New Record <i class="fa fa-plus-circle"></i></a></h4>

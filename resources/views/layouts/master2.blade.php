@@ -21,7 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
  {{--  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> --}}
-
+ 
+ <script src="js/jquery2.2.min.js"></script><!--add textbox -->
 
 
   

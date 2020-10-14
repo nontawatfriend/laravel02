@@ -37,6 +37,8 @@ Route::get('new', function () {
 });
 
 Route::post('insert','App\Http\Controllers\MydbController@insert');
-Route::get('edit/{id}','App\Http\Controllers\MydbController@edit');
+Route::post('chang','App\Http\Controllers\MydbController@chang');//ส่งแบบ post
+//Route::post('edit','App\Http\Controllers\MydbController@edit'); //ส่งแบบ post แบบนี้ใช้ไม่ได้ edit
+//Route::get('edit/{id}','App\Http\Controllers\MydbController@edit'); //ส่งแบบ get
 Route::post('edits/{id}','App\Http\Controllers\MydbController@edits');
 Route::post('delete/{id}','App\Http\Controllers\MydbController@delete');

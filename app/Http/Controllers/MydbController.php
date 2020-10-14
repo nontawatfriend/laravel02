@@ -50,8 +50,16 @@ class MydbController extends Controller
         $_data = DB::select($strSQL);
         return view('edits',['_data'=>$_data]);
     } */
-    public function edit($id) {
+    
+    /* ส่งแบบ get */
+/*     public function edit($id) {
         $_data = DB::select('select * from mytb1 where id ='.$id.'');
+        return view('edits',['_data'=>$_data]);
+    } */ 
+    public function chang(Request $ids){
+        // echo 'xxx';exit;
+        $id = $ids->input('id');
+        $_data = DB::table('mytb1')->where('id', "$id")->first();
         return view('edits',['_data'=>$_data]);
     }
     public function edits(Request $request,$id) {

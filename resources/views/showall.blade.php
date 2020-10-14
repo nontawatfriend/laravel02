@@ -35,7 +35,13 @@
                         <td>{{$rec->id}}</td>
                         <td>{{$rec->fname}}</td>
                         <td>{{$rec->lname}}</td>
-                        <td><a href="edit/{{$rec->id}}" class="btn btn-warning">Change <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                        <td>{{-- <a href="edit/{{$rec->id}}" class="btn btn-warning">Change <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> --}}{{-- ส่งแบบ get --}}
+                            <form  method="post" action="{{url('chang')}}">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <input type="hidden" name="id" value="{{$rec->id}}">
+                                <button type="submit" class="btn btn-warning">Change <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                            </form>
+                        </td>
                         <td><button  onclick="deleteConfirmation({{$rec->id}})" class="btn btn-danger">Remove <i class="fa fa-trash" aria-hidden="true"></i></button></td>
                     </tr>
                     @endforeach
